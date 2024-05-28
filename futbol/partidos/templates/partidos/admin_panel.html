@@ -1,0 +1,30 @@
+<!-- templates/partidos/admin_panel.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel de Administración</title>
+    <style>
+        body {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .admin-option {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Panel de Administración</h1>
+    <a href="{% url 'registrar_equipo' %}" class="admin-option">Registrar Equipo</a>
+    <a href="{% url 'registrar_partido' %}" class="admin-option">Registrar Partido</a>
+    <a href="{% url 'home' %}" class="admin-option">Volver a Tabla de Posiciones</a>
+</body>
+</html>

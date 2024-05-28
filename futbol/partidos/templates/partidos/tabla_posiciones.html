@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla de Posiciones</title>
+    <style>
+        body {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+        }
+        .admin-button {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            float: right; /* Alinear el botón a la derecha */
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla de Posiciones</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Equipo</th>
+                <th>Puntos</th>
+                <th>Partidos Jugados</th>
+                <th>Partidos Ganados</th>
+                <th>Partidos Empatados</th>
+                <th>Partidos Perdidos</th>
+                <th>Goles a Favor</th>
+                <th>Goles en Contra</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in tabla %}
+            <tr>
+                <td>{{ equipo.nombre }}</td>
+                <td>{{ equipo.puntos }}</td>
+                <td>{{ equipo.partidos_jugados }}</td>
+                <td>{{ equipo.partidos_ganados }}</td>
+                <td>{{ equipo.partidos_empatados }}</td>
+                <td>{{ equipo.partidos_perdidos }}</td>
+                <td>{{ equipo.goles_a_favor }}</td>
+                <td>{{ equipo.goles_en_contra }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'admin_login' %}" class="admin-button">Modo Administrador</a>
+</body>
+</html>

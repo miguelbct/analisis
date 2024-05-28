@@ -1,0 +1,26 @@
+<!-- partidos/templates/partidos/lista_equipos.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Equipos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'partidos/styles.css' %}">
+</head>
+<body>
+    <h1>Lista de Equipos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipos %}
+            <tr>
+                <td>{{ equipo.nombre }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'registrar_equipo' %}">Registrar nuevo equipo</a>
+</body>
+</html>
